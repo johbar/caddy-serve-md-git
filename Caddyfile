@@ -1,0 +1,31 @@
+{
+	debug
+	log {
+		output stdout
+	}
+
+	git {
+		repo markdown {
+			base_dir {$MD_DIR:.}
+			url {$GIT_REPO_URL}
+			#auth username {$GIT_USERNAME:none} password {$GIT_PASSWORD:none}
+			# depth 1
+			update every {$UPDATE_SECONDS:600}
+			branch {$GIT_BRANCH:main}
+		}
+	}
+}
+
+http://localhost:8080
+vars mdDir {$MD_DIR:.}
+root * ./
+
+file_server
+templates
+encode gzip
+
+# Rewrite requested Markdown files to the template for rendering
+uri path_regexp /(.*\.md$) /$index.html
+
+# Look for everything else in the md dir
+try_files {path} {path}.html /{vars.mdDir}/{path} index.html

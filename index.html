@@ -1,0 +1,22 @@
+{{ $pathParts := splitList "/" .OriginalReq.URL.Path }}
+{{ $markdownFilename := default "README.md" (slice $pathParts 1 | join "/") }}
+{{ $markdownFilePath := printf "%s/%s/%s" (placeholder "mdDir") "markdown" $markdownFilename }}
+
+{{ $markdownFile := (include $markdownFilePath | splitFrontMatter) }}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitLab Wiki : {{ $markdownFilename }}</title>
+    <link rel="stylesheet" href="/chroma2.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main>
+        <p>Markdown at {{ $markdownFilePath }}</p>
+        <p>Looked for {{ $pathParts }} </p>
+        <article>{{ markdown $markdownFile.Body }}</article>
+    </main>
+</body>
+
+</html>

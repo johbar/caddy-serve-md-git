@@ -1,0 +1,31 @@
+
+
+blockquote {
+    background-color: whitesmoke;
+    border-left: 0.5em solid gray;
+    padding-left: 1em;
+    margin-left: 1pt;
+}
+
+thead {background-color: aliceblue;}
+
+table, th, td {
+    border: thin solid black;
+    border-collapse: collapse;
+    padding: 0.5em;
+  }
+
+  tbody tr:nth-child(even) { 
+    background-color: #e4ebf2; 
+    color: #000; 
+  }
+
+pre { padding: 1em;}
+
+h1, h2, h3, h4, h5, h6 {font-family: sans-serif;}
+
+
+/*  http://markdowncss.github.io/retro/ */
+
+
+  

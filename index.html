@@ -7,14 +7,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>GitLab Wiki : {{ $markdownFilename }}</title>
+    <title>{{ $markdownFilename }}</title>
     <link rel="stylesheet" href="/chroma2.css">
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <main>
-        <p>Markdown at {{ $markdownFilePath }}</p>
-        <p>Looked for {{ $pathParts }} </p>
+    <!-- Serving {{ $markdownFilePath }}  -->
         <article>{{ markdown $markdownFile.Body }}</article>
     </main>
 </body>

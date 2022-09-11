@@ -1,6 +1,6 @@
 # caddy-serve-md-git
 
-Serves a markdown git repo as HTML using (Git-Caddy)[https://github.com/greenpau/caddy-git].
+Serves a markdown git repo as HTML using [Git-Caddy](https://github.com/greenpau/caddy-git).
 
 Still work in progress.
 

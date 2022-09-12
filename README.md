@@ -17,10 +17,13 @@ Change env `GIT_REPO_URL` accordingly.
 
 More env to customize behavior:
 
-| Name | Description
-| ---   | ---
-| GIT_BRANCH  | Git-Ref to clone  (default: `main`)
-| UPDATE_SECONDS | Interval of automatic update (default: `600`)
+| Name              | Description
+| ------------------| -------------------------------------
+| GIT_BRANCH        | Git-Ref to clone  (default: `main`)
+| UPDATE_SECONDS    | Interval of automatic update (default: `600`)
+| DEBUG             | Set to `debug` for extensive logging
+| AUTHENTICATION    | set to `auth username {$USERNAME} password {PASSWORD}` to enable basic auth 
+
 
 ## See also
 
